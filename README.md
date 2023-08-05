@@ -20,5 +20,5 @@
 > [策略模式](./design/src/main/java/cn/whlit/staragey)\
 > [状态模式](./design/src/main/java/cn/whlit/state)\
 > [模板方法模式](./design/src/main/java/cn/whlit/template)\
-> [访问者模式](./design/src/main/java/cn/whlit/visitor)\
+> [访问者模式](./design/src/main/java/cn/whlit/visitor)
 
