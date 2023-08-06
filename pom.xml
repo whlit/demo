@@ -12,6 +12,7 @@
         <module>design</module>
         <module>thread</module>
         <module>jvm</module>
+        <module>spring</module>
     </modules>
 
     <properties>
