@@ -16,9 +16,12 @@
         <module>dao</module>
         <module>domain</module>
         <module>cloud</module>
-        <module>cloud/server</module>
-        <module>cloud/provider</module>
-        <module>cloud/consumer</module>
+        <module>cloud/cloud-server</module>
+        <module>cloud/cloud-provider</module>
+        <module>cloud/cloud-consumer</module>
+        <module>cloud-alibaba</module>
+        <module>cloud-alibaba/cloud-alibaba-provider</module>
+        <module>cloud-alibaba/cloud-alibaba-consumer</module>
     </modules>
     <artifactId>spring</artifactId>
 
@@ -28,6 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>2.7.14</spring.boot.version>
         <spring.cloud.version>2021.0.8</spring.cloud.version>
+        <spring.cloud.alibaba.version>2021.0.5.0</spring.cloud.alibaba.version>
         <org.lombok.version>1.18.28</org.lombok.version>
     </properties>
 
@@ -44,6 +48,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

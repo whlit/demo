@@ -10,7 +10,8 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>server</artifactId>
+    <groupId>cn.whlit.cloud</groupId>
+    <artifactId>cloud-server</artifactId>
 
     <dependencies>
         <dependency>

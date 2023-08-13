@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cloud-alibaba-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.222.5:8848
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
