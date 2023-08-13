@@ -1,5 +1,5 @@
 version: '0.0.1'
-
+## todo 启动莫名其妙会自动重启
 services:
   mysql:
     image: mysql:5.7
