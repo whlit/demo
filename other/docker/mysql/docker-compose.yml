@@ -1,5 +1,4 @@
 version: '0.0.1'
-## todo 启动莫名其妙会自动重启
 services:
   mysql:
     image: mysql:5.7
@@ -10,6 +9,7 @@ services:
     environment:
       - 'MYSQL_USER=root'
       - 'MYSQL_ROOT_PASSWORD=123456'
-    volumes:
-      - '~/data/mysql/data:/var/lib/mysql'
-      - '~/data/mysql/log:/var/log/mysql'
+#    volumes:
+#      ## todo 启动莫名其妙会自动重启
+#      - '~/data/mysql/data:/var/lib/mysql'
+#      - '~/data/mysql/log:/var/log/mysql'

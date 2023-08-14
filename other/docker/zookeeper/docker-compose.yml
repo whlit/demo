@@ -1,0 +1,8 @@
+version: '0.0.1'
+services:
+  zookeeper:
+    image: zookeeper:latest
+    container_name: dev_zookeeper
+    restart: always
+    ports:
+      - 2181:2181

@@ -2,4 +2,4 @@
 
 一个SpringCloudAlibaba的Demo
 
-[Nacos安装](./Nacos.md)
+[Nacos安装](../../other/docker/nacos/Nacos.md)
