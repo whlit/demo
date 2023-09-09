@@ -2,9 +2,7 @@
   <n-config-provider :theme="theme" :locale="locale" :date-locale="dateLocale">
     <div :style="{ height: '100vh', width: '100%', position: 'relative' }">
       <n-layout position="absolute">
-        <n-layout-header bordered :style="{ height: '64px' }">
-          <Header/>
-        </n-layout-header>
+        <Header />
         <n-layout has-sider position="absolute" :style="{ top: '64px' }">
           <Sider />
           <n-layout-content>
