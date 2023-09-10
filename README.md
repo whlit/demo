@@ -45,3 +45,8 @@
 
 > [自定义ClassLoader](./jvm/src/main/java/cn/whlit/classloader/自定义ClassLoader.md)
 
+## Admin 
+
+一个基于 Vite + Vue3 + TS + Naive Ui 构建的Admin控制台
+
+> [Admin](./admin/Admin.md)
