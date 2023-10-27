@@ -9,18 +9,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <artifactId>redis</artifactId>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <artifactId>design</artifactId>
     <dependencies>
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.3.0</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>4.4.3</version>
         </dependency>
     </dependencies>
 

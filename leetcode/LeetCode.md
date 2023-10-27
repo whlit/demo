@@ -16,3 +16,6 @@
 
 [322.零钱兑换](./src/main/java/cn/whlit/q322/零钱兑换.md)
 
+[300.最长递增子序列](./src/main/java/cn/whlit/q300/最长递增子序列.md)
+
+[152.乘积最大子数组](./src/main/java/cn/whlit/q152/乘积最大子数组.md)
