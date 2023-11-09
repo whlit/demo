@@ -10,7 +10,10 @@
     </parent>
     <packaging>pom</packaging>
     <artifactId>cloud-alibaba</artifactId>
-
+    <modules>
+        <module>cloud-alibaba-consumer</module>
+        <module>cloud-alibaba-provider</module>
+    </modules>
 
 
 </project>

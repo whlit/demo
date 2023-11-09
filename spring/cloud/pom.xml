@@ -12,4 +12,10 @@
 
     <artifactId>cloud</artifactId>
 
+    <modules>
+        <module>cloud-server</module>
+        <module>cloud-consumer</module>
+        <module>cloud-provider</module>
+    </modules>
+
 </project>

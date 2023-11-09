@@ -11,7 +11,9 @@
 
     <artifactId>starter</artifactId>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>demo-spring-boot-starter</module>
+    </modules>
 
 
 

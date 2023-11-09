@@ -12,6 +12,9 @@
     <packaging>pom</packaging>
     <groupId>cn.whlit.dubbo</groupId>
     <artifactId>dubbo3</artifactId>
-
+    <modules>
+        <module>dubbo3-consumer</module>
+        <module>dubbo3-provider</module>
+    </modules>
 
 </project>

@@ -16,17 +16,9 @@
         <module>dao</module>
         <module>domain</module>
         <module>cloud</module>
-        <module>cloud/cloud-server</module>
-        <module>cloud/cloud-provider</module>
-        <module>cloud/cloud-consumer</module>
         <module>cloud-alibaba</module>
-        <module>cloud-alibaba/cloud-alibaba-provider</module>
-        <module>cloud-alibaba/cloud-alibaba-consumer</module>
         <module>dubbo3</module>
-        <module>dubbo3/dubbo3-provider</module>
-        <module>dubbo3/dubbo3-consumer</module>
         <module>starter</module>
-        <module>starter/demo-spring-boot-starter</module>
     </modules>
     <artifactId>spring</artifactId>
 
