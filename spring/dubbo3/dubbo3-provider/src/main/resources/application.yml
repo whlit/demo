@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: dubbo3_provider
+    # qos配置，不配置可能会出现端口冲突
+    qos-enable: true
+    qos-port: 2222
+    pos-accept-foreign-ip: false
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: zookeeper://${zookeeper.address:192.168.222.5}:2181
+
+server:
+  port: 8081
