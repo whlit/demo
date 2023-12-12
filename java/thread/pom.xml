@@ -5,15 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.whlit</groupId>
-        <artifactId>whlit-demo</artifactId>
+        <artifactId>demo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>jvm</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <artifactId>thread</artifactId>
+
 </project>
