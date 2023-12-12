@@ -24,6 +24,11 @@
             <groupId>cn.whlit.spring.starter</groupId>
             <artifactId>demo-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.15</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
