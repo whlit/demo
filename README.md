@@ -24,6 +24,8 @@
 
 ## Spring
 
+> [Spring](./java/spring/README.md)
+
 ### Spring Cloud
 
 > [SpringCloudDemo](./java/spring/cloud/SpringCloud.md)\
