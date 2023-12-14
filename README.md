@@ -52,3 +52,11 @@
 一个基于 Vite + Vue3 + TS + Naive Ui 构建的Admin控制台
 
 > [Admin](./admin/Admin.md)
+
+## 数据处理
+
+### wiki数据处理
+
+将下载的wiki数据进行预处理用于后面的学习
+
+> [wiki数据处理](./python/wiki/README.md)
