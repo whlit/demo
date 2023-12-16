@@ -1,19 +1,32 @@
 package cn.whlit.spring.es.models;
 
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
 /**
  * @author WangHaiLong 2023/12/15 16:16
  */
 public class Revision {
 
+    @Field(type = FieldType.Long)
     private Integer id;
+    @Field(type = FieldType.Long)
     private Integer parentId;
+    @Field(type = FieldType.Keyword)
     private String timestamp;
+    @Field(type = FieldType.Keyword)
     private String comment;
+    @Field(type = FieldType.Keyword)
     private String model;
+    @Field(type = FieldType.Keyword)
     private String format;
+    @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String text;
+    @Field(type = FieldType.Long)
     private Integer size;
+    @Field(type = FieldType.Keyword)
     private String sha1;
+    @Field(type = FieldType.Object)
     private Contributor contributor;
 
     public Integer getSize() {
