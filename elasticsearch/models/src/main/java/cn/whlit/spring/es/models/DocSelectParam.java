@@ -12,6 +12,9 @@ public class DocSelectParam {
     private String title;
     private String redirect;
     private Integer ns;
+    private Integer page;
+    private Integer pageSize;
+
 
     public Integer getId() {
         return id;
@@ -51,5 +54,21 @@ public class DocSelectParam {
 
     public void setNs(Integer ns) {
         this.ns = ns;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
     }
 }
