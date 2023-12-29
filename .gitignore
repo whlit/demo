@@ -33,3 +33,6 @@ build/
 
 */node_modules/
 
+.tmp
+
+__pycache__
