@@ -1,12 +1,12 @@
 package cn.whlit.es.mapper;
 
+import cn.whlit.es.util.SqlUtils;
 import cn.whlit.spring.es.models.Doc;
 import cn.whlit.spring.es.models.DocSelectParam;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 import org.apache.ibatis.jdbc.SQL;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,34 +38,39 @@ public interface DocMapper {
     @SelectProvider(SqlProvider.class)
     Doc selectById(Integer id);
 
+    @ResultMap("doc")
     @SelectProvider(SqlProvider.class)
-    Doc select(DocSelectParam param);
+    List<Doc> select(DocSelectParam param);
 
-    class SqlProvider implements ProviderMethodResolver{
+    class SqlProvider implements ProviderMethodResolver {
         private static final String columns = "p.id, p.title, p.ns, p.redirect, " +
                 "r.id as rid, r.parent_id, r.timest, r.`comment`, r.model, r.format, r.sha1, r.size, r.content, " +
                 "u.id as uid, u.user_name ";
         private static final String table = "page p " +
                 "LEFT JOIN revision r on p.revision_id = r.id " +
                 "LEFT JOIN `user` u on r.contributor_id = u.id";
-        public static String selectById(Integer id){
+
+        public static String selectById(Integer id) {
             SQL sql = new SQL();
             sql.SELECT(columns).FROM(table).WHERE("p.id = #{id}");
             return sql.toString();
         }
 
-        public static String select(DocSelectParam param){
+        public static String select(DocSelectParam param) {
             SQL sql = new SQL();
             sql.SELECT(columns).FROM(table);
-            if (Objects.isNull(param)){
+            if (Objects.isNull(param)) {
                 return sql.toString();
             }
-            if (Objects.nonNull(param.getId())){
-                return sql.WHERE("id = #{id}").toString();
+            if (Objects.nonNull(param.getId())) {
+                return sql.WHERE("p.id = #{id}").toString();
             }
-            if (Objects.nonNull(param.getIds()) && !param.getIds().isEmpty()){
+            if (Objects.nonNull(param.getIds()) && !param.getIds().isEmpty()) {
+                return sql.WHERE(SqlUtils.in("p.id", param.getIds(),
+                                (id, index) -> String.format("#{ids[%s]}", index)))
+                        .toString();
             }
-            List<String> conditions = new ArrayList<>();
+            SqlUtils.limit(sql, param.getPage(), param.getPageSize());
             return sql.toString();
         }
 
