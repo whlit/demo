@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.whlit.mapper.ItemMapper">
+    <resultMap id="item" type="cn.whlit.entity.Item">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+    </resultMap>
+    <insert id="insert" parameterType="cn.whlit.entity.Item" useGeneratedKeys="true" keyProperty="id">
+        insert into item (name, type) values (#{name}, #{type})
+    </insert>
+    <select id="selectById" resultMap="item" parameterType="integer">
+        select id, `name`, `type` from item where id = #{id}
+    </select>
+</mapper>

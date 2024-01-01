@@ -16,6 +16,10 @@
             <groupId>cn.whlit</groupId>
             <artifactId>client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.whlit</groupId>
+            <artifactId>dao</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
