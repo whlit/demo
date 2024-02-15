@@ -39,6 +39,10 @@
 
 > [SpringBootStarter](./spring/starter/SpringStarter.md)
 
+### SpringBoot + Mybatis 多数据源整合
+
+> [mutil-datasource](./spring/mutil-datasource/README.md)
+
 ## LeetCode
 
 > [leetcode](./leetcode/LeetCode.md)
