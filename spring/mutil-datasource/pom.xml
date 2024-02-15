@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.whlit</groupId>
+        <artifactId>spring</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>cn.whlit.spring</groupId>
+    <artifactId>mutil-datasource</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>md-web</module>
+        <module>md-service</module>
+        <module>md-dao</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.whlit.spring.md</groupId>
+                <artifactId>md-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.whlit.spring.md</groupId>
+                <artifactId>md-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

@@ -17,6 +17,7 @@
         <module>cloud-alibaba</module>
         <module>dubbo3</module>
         <module>starter</module>
+        <module>mutil-datasource</module>
     </modules>
     <artifactId>spring</artifactId>
 
