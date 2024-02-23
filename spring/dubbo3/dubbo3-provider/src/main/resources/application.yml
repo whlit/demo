@@ -4,12 +4,20 @@ dubbo:
     # qos配置，不配置可能会出现端口冲突
     qos-enable: true
     qos-port: 2222
-    pos-accept-foreign-ip: false
+    qosAcceptForeignIp: false
   protocol:
     name: dubbo
     port: 20881
-  registry:
-    address: zookeeper://${zookeeper.address:192.168.222.5}:2181
+#  registry:
+#    address: zookeeper://localhost:2181
+  registries:
+    zookeeper:
+      address: zookeeper://localhost:2181
+      default: false
+    nacos:
+      address: nacos://localhost:8848
+      group: dubbo
+      default: true
 
 server:
   port: 8081

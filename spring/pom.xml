@@ -31,6 +31,8 @@
         <org.lombok.version>1.18.28</org.lombok.version>
         <dubbo.version>3.2.5</dubbo.version>
         <mybatis.version>2.3.2</mybatis.version>
+        <mysql.cj.version>8.0.33</mysql.cj.version>
+        <nacos.version>2.1.0</nacos.version>
     </properties>
 
     <dependencyManagement>
@@ -113,7 +115,12 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.33</version>
+                <version>${mysql.cj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
