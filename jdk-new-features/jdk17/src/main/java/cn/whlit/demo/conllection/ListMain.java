@@ -1,12 +1,17 @@
 package cn.whlit.demo.conllection;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * @author WangHaiLong 2024/2/18 21:23
  */
 public class ListMain {
     public static void main(String[] args) {
+        newFeature();
+    }
+
+
+    public static void newFeature() {
         List<Integer> list = List.of(1, 2, 3);
         System.out.println(list);
         List<Integer> copyOfList = List.copyOf(list);
