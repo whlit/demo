@@ -3,6 +3,7 @@ package cn.whlit.web;
 import cn.whlit.common.AdminConfig;
 import cn.whlit.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,15 @@ public class UserController {
     @Autowired
     private AdminConfig adminConfig;
 
+    @Autowired
+    private RedisTemplate<Object, Object> redisTemplate;
+    @Autowired
+    private RedisTemplate<String, String> stringRedisTemplate;
+
     @GetMapping("admins")
     public List<User> admins(){
-        return adminConfig.getUsers();
+        String s = "";
+        List<User> users = adminConfig.getUsers();
+        return users;
     }
 }

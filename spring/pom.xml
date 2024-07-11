@@ -29,7 +29,7 @@
         <spring.cloud.version>2021.0.8</spring.cloud.version>
         <spring.cloud.alibaba.version>2021.0.5.0</spring.cloud.alibaba.version>
         <org.lombok.version>1.18.28</org.lombok.version>
-        <dubbo.version>3.2.5</dubbo.version>
+        <dubbo.version>3.2.11</dubbo.version>
         <mybatis.version>2.3.2</mybatis.version>
         <mysql.cj.version>8.0.33</mysql.cj.version>
         <nacos.version>2.1.0</nacos.version>
@@ -121,6 +121,11 @@
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.45</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
