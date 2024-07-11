@@ -60,7 +60,7 @@ public class MySolution {
 
     public static void main(String[] args) throws IOException {
         MySolution mySolution = new MySolution();
-        JSONArray array = JSON.parseArray(Files.newInputStream(Paths.get("D:\\work\\whlit-demo\\leetcode\\src\\main\\java\\cn\\whlit\\q11\\test.json")));
+        JSONArray array = JSON.parseArray(Files.newInputStream(Paths.get("D:\\work\\demo\\leetcode\\src\\main\\java\\cn\\whlit\\q11\\test.json")));
         for (int i = 0; i < array.size(); i++) {
             JSONObject jsonObject = array.getJSONObject(i);
             int[] ints = jsonObject.getList("arr", int.class).stream().mapToInt(Integer::intValue).toArray();

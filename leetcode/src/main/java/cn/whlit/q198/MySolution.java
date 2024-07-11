@@ -34,6 +34,9 @@ package cn.whlit.q198;
 //
 // Related Topics 数组 动态规划 👍 2682 👎 0
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  * @auther WangHaiLong 2023/8/16 13:39
  */
@@ -53,7 +56,21 @@ public class MySolution {
             q = p;
             p = c;
         }
+        ArrayList<String> strings = new ArrayList<>();
         return p;
+    }
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int i = m -1, j = n -1, k = nums1.length - 1; i >= 0 || j >=0; ){
+            if(nums1[i] >= nums2[j]){
+                nums1[k] = nums1[i];
+                i--;
+            }else {
+                nums1[k] = nums2[j];
+                j--;
+            }
+            k--;
+        }
     }
 
 

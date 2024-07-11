@@ -38,34 +38,55 @@ import java.util.List;
  * @auther WangHaiLong 2023/8/16 12:31
  */
 public class MySolution {
+//    public List<List<Integer>> generate(int numRows) {
+//        List<List<Integer>> result = new ArrayList<>();
+//        for (int i = 1; i <= numRows; i++) {
+//            List<Integer> list = new ArrayList<>();
+//            if (i == 1){
+//                list.add(1);
+//                result.add(list);
+//                continue;
+//            }
+//            if (i ==2){
+//                list.add(1);
+//                list.add(1);
+//                result.add(list);
+//                continue;
+//            }
+//            List<Integer> preList = result.get(i - 2);
+//            boolean f = (i) % 2 == 0;
+//            int k = (i-1) / 2;
+//            for (int j = k; j >= 0; j--) {
+//                int t = j == 0 ? 1 : preList.get(j - 1) + preList.get(j);
+//                if (!f && j == k){
+//                    list.add(t);
+//                    continue;
+//                }
+//                list.add(t);
+//                list.add(0, t);
+//            }
+//            result.add(list);
+//        }
+//        return result;
+//    }
+
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        result.get(0).add(1);
+        if (numRows == 1){
+            return result;
+        }
         for (int i = 1; i <= numRows; i++) {
-            List<Integer> list = new ArrayList<>();
-            if (i == 1){
-                list.add(1);
-                result.add(list);
-                continue;
-            }
-            if (i ==2){
-                list.add(1);
-                list.add(1);
-                result.add(list);
-                continue;
-            }
-            List<Integer> preList = result.get(i - 2);
-            boolean f = (i) % 2 == 0;
-            int k = (i-1) / 2;
-            for (int j = k; j >= 0; j--) {
-                int t = j == 0 ? 1 : preList.get(j - 1) + preList.get(j);
-                if (!f && j == k){
-                    list.add(t);
+            result.add(new ArrayList<>());
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i){
+                    result.get(i).add(1);
                     continue;
                 }
-                list.add(t);
-                list.add(0, t);
+                List<Integer> list = result.get(i - 1);
+                result.get(i).add(list.get(j) + list.get(j -1));
             }
-            result.add(list);
         }
         return result;
     }

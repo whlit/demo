@@ -63,9 +63,27 @@ public class MySolution {
         return temp[n-2] + temp[n-1];
     }
 
+    public int climbStairs2(int n) {
+        int[] temp = new int[n];
+        if (n == 1){
+            return 1;
+        }
+        if (n == 2){
+            return 2;
+        }
+        temp[0] = 1;
+        temp[1] = 2;
+        for (int i = 2; i < n; i++){
+            temp[i] = temp[i-1] + temp[i-2];
+        }
+        return temp[n-1];
+    }
+
     public static void main(String[] args) {
         MySolution solution = new MySolution();
         int i = solution.climbStairs(5);
+        int j = solution.climbStairs2(5);
         System.out.println(i);
+        System.out.println(j);
     }
 }

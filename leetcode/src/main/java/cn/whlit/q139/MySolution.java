@@ -55,26 +55,48 @@ import java.util.List;
 
 public class MySolution {
 
-    public boolean wordBreak(String s, List<String> wordDict) {
-        boolean[] f = new boolean[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            if (i != 0 && !f[i-1]){
-                continue;
-            }
-            W: for (String word : wordDict) {
-                if (i + word.length() > s.length()){
-                    continue ;
+//    public boolean wordBreak(String s, List<String> wordDict) {
+//        boolean[] f = new boolean[s.length()];
+//        for (int i = 0; i < s.length(); i++) {
+//            if (i != 0 && !f[i-1]){
+//                continue;
+//            }
+//            W: for (String word : wordDict) {
+//                if (i + word.length() > s.length()){
+//                    continue ;
+//                }
+//                for (int j = 0; j < word.length(); j++) {
+//                    if (s.charAt(i + j) != word.charAt(j)){
+//                        continue W;
+//                    }
+//                }
+//                f[i + word.length() - 1] = true;
+//            }
+//        }
+//        return f[s.length() -1];
+//    }
+
+    public boolean wordBreak(String s, List<String> wordDict){
+        int length = s.length();
+        A:for (int i = 0; i < length; i++) {
+            int slen = length - i;
+            B:for (int j = 0; j < wordDict.size(); j++) {
+                int wlen = wordDict.get(j).length();
+                if (slen < wlen){
+                    continue;
                 }
-                for (int j = 0; j < word.length(); j++) {
-                    if (s.charAt(i + j) != word.charAt(j)){
-                        continue W;
+                for (int k = 0; k < wlen; k++) {
+                    if (s.charAt(i + k) != wordDict.get(j).charAt(k)){
+                        continue B;
                     }
                 }
-                f[i + word.length() - 1] = true;
+
             }
+            return false;
         }
-        return f[s.length() -1];
+        return true;
     }
+
 
     public static void main(String[] args) {
 

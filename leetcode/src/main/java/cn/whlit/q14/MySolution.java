@@ -42,6 +42,7 @@ public class MySolution {
         String result = "";
         char c = ' ';
         int ci = 0;
+
         for (int i = 0; i < strs.length; i++) {
             if (ci >= strs[i].length()){
                 break;
