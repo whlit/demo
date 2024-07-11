@@ -18,6 +18,10 @@ dubbo:
       address: nacos://localhost:8848
       group: dubbo
       default: true
+    nacos2:
+      address: nacos://localhost:8858
+      group: dubbo
+      default: true
 
 server:
   port: 8081
