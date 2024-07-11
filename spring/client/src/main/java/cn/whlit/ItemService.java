@@ -8,4 +8,6 @@ import cn.whlit.domain.ItemDTO;
 public interface ItemService {
 
     ItemDTO test();
+
+    void add(ItemDTO itemDTO);
 }
