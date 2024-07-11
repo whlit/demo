@@ -22,3 +22,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+demo:
+  health:
+    enable: true
