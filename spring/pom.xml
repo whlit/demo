@@ -25,9 +25,9 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.7.14</spring.boot.version>
-        <spring.cloud.version>2021.0.8</spring.cloud.version>
-        <spring.cloud.alibaba.version>2021.0.5.0</spring.cloud.alibaba.version>
+        <spring.boot.version>2.5.7</spring.boot.version>
+        <spring.cloud.version>2020.0.6</spring.cloud.version>
+        <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
         <org.lombok.version>1.18.28</org.lombok.version>
         <dubbo.version>3.2.11</dubbo.version>
         <mybatis.version>2.3.2</mybatis.version>
