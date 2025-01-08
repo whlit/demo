@@ -4,7 +4,7 @@ dubbo:
     # qos配置，不配置可能会出现端口冲突
     qos-enable: true
     qos-port: 2223
-    pos-accept-foreign-ip: false
+    qos-accept-foreign-ip: false
   protocol:
     name: dubbo
     port: 20882
