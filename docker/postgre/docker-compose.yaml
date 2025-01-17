@@ -1,0 +1,13 @@
+services:
+  pg-dev:
+    image: postgres:15.5
+    container_name: pg-dev
+    ports:
+      - 5432:5432
+    environment:
+      TZ: Asia/Shanghai
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+    volumes:
+      - ./pg-dev/data:/var/lib/postgresql/data:rw

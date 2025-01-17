@@ -1,0 +1,104 @@
+networks:
+  redis-net:
+    external:
+      name: redis-net
+
+services:
+  redis-node-1:
+    image: redis:7.2.3
+    container_name: redis-node-1
+    networks:
+      redis-net:
+        ipv4_address: 192.168.200.11
+    ports:
+      - "6381:6381"
+      - "16381:16381"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-1/data:/data
+      - ./redis-cluster/redis-node-1/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-node-2:
+    image: redis:7.2.3
+    container_name: redis-node-2
+    networks:
+      redis-net:
+        ipv4_address: 192.168.200.12
+    ports:
+      - "6382:6382"
+      - "16382:16382"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-2/data:/data
+      - ./redis-cluster/redis-node-2/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-node-3:
+    image: redis:7.2.3
+    container_name: redis-node-3
+    networks:
+      redis-net:
+        ipv4_address: 192.168.200.13
+    ports:
+      - "6383:6383"
+      - "16383:16383"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-3/data:/data
+      - ./redis-cluster/redis-node-3/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-node-4:
+    image: redis:7.2.3
+    container_name: redis-node-4
+    networks:
+      redis-net:
+      # 
+        ipv4_address: 192.168.200.14
+    ports:
+      - "6384:6384"
+      - "16384:16384"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-4/data:/data
+      - ./redis-cluster/redis-node-4/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-node-5:
+    image: redis:7.2.3
+    container_name: redis-node-5
+    networks:
+      redis-net:
+        ipv4_address: 192.168.200.15
+    ports:
+      - "6385:6385"
+      - "16385:16385"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-5/data:/data
+      - ./redis-cluster/redis-node-5/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-node-6:
+    image: redis:7.2.3
+    container_name: redis-node-6
+    networks:
+      redis-net:
+        ipv4_address: 192.168.200.16
+    ports:
+      - "6386:6386"
+      - "16386:16386"
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./redis-cluster/redis-node-6/data:/data
+      - ./redis-cluster/redis-node-6/redis.conf:/usr/local/etc/redis/redis.conf
+
+  redis-cluster-create:
+    image: redis:7.2.3
+    container_name: redis-cluster-create
+    networks:
+      - redis-net
+    command: ["redis-cli", "--cluster", "create", "192.168.200.11:6381", "192.168.200.12:6382", "192.168.200.13:6383", "192.168.200.14:6384", "192.168.200.15:6385", "192.168.200.16:6386", "--cluster-replicas", "1", "--cluster-yes"]
+    depends_on:
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+      - redis-node-4
+      - redis-node-5
+      - redis-node-6
