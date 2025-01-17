@@ -19,6 +19,7 @@
         <module>starter</module>
         <module>mutil-datasource</module>
         <module>mongodb</module>
+        <module>spring-boot-demo</module>
     </modules>
     <artifactId>spring</artifactId>
 
